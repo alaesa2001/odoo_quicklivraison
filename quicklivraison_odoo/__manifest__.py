@@ -6,6 +6,7 @@
     "author": "Quick Livraison",
     "website": "https://quicklivraison.ma",
     "license": "LGPL-3",
+    "images": ["static/description/banner.png"],
     "depends": ["sale_management", "stock", "mail"],
     "data": [
         "security/ir.model.access.csv",
