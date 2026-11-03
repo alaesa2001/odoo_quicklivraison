@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_quicklivraison_city_user,quicklivraison.city user,model_quicklivraison_city,base.group_user,1,0,0,0
+access_quicklivraison_city_manager,quicklivraison.city manager,model_quicklivraison_city,sales_team.group_sale_manager,1,1,1,1

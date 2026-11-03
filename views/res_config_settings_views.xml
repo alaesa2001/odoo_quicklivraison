@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_quicklivraison" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.quicklivraison</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Quick Livraison" name="quicklivraison" groups="sales_team.group_sale_manager">
+                    <block title="API Connection">
+                        <setting string="API base URL" help="Production URL: https://clients.quicklivraison.ma/api">
+                            <field name="quicklivraison_base_url"/>
+                        </setting>
+                        <setting string="API key" help="Generate it in Quick Livraison: Profile → API.">
+                            <field name="quicklivraison_api_key" password="True"/>
+                        </setting>
+                        <setting string="Request timeout">
+                            <field name="quicklivraison_timeout"/>
+                        </setting>
+                        <setting string="Test and initialize">
+                            <button name="action_quicklivraison_test" type="object" string="Test Connection" class="btn-primary"/>
+                            <button name="action_quicklivraison_sync_cities" type="object" string="Synchronize Cities" class="btn-secondary ms-2"/>
+                        </setting>
+                    </block>
+                    <block title="Automation">
+                        <setting string="Export when a quotation is confirmed" help="Only orders with a selected Quick Livraison city are exported.">
+                            <field name="quicklivraison_auto_export"/>
+                        </setting>
+                        <setting string="Synchronize statuses every 15 minutes">
+                            <field name="quicklivraison_auto_sync"/>
+                        </setting>
+                    </block>
+                    <block title="Webhook">
+                        <setting string="Webhook URL" help="Add this URL in Quick Livraison Profile → API → Webhooks.">
+                            <field name="quicklivraison_webhook_url" readonly="True"/>
+                        </setting>
+                        <setting string="Webhook secret" help="Paste the secret shown once when the webhook is created.">
+                            <field name="quicklivraison_webhook_secret" password="True"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

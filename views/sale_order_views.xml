@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form_quicklivraison" model="ir.ui.view">
+        <field name="name">sale.order.form.quicklivraison</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_quicklivraison_export" type="object" string="Send to Quick Livraison" class="oe_highlight"
+                    groups="sales_team.group_sale_salesman" invisible="state not in ('sale', 'done') or quicklivraison_tracking"/>
+                <button name="action_quicklivraison_sync" type="object" string="Sync Quick Livraison"
+                    groups="sales_team.group_sale_salesman" invisible="not quicklivraison_tracking"/>
+                <button name="action_open_quicklivraison_tracking" type="object" string="Open Tracking"
+                    groups="sales_team.group_sale_salesman" invisible="not quicklivraison_tracking"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <group string="Quick Livraison" name="quicklivraison_group">
+                    <group>
+                        <field name="quicklivraison_city_id" options="{'no_create': True}"/>
+                        <field name="quicklivraison_tracking"/>
+                        <field name="quicklivraison_tracking_url" widget="url" invisible="not quicklivraison_tracking"/>
+                    </group>
+                    <group>
+                        <field name="quicklivraison_status"/>
+                        <field name="quicklivraison_status_second"/>
+                        <field name="quicklivraison_exported_at"/>
+                        <field name="quicklivraison_last_sync"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

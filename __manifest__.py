@@ -1,0 +1,20 @@
+{
+    "name": "Quick Livraison Connector",
+    "summary": "Create and track Quick Livraison parcels from Odoo sales",
+    "version": "18.0.1.0.0",
+    "category": "Sales/Shipping",
+    "author": "Quick Livraison",
+    "website": "https://quicklivraison.ma",
+    "license": "LGPL-3",
+    "depends": ["sale_management", "stock", "mail"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/ir_cron.xml",
+        "views/res_config_settings_views.xml",
+        "views/quicklivraison_city_views.xml",
+        "views/sale_order_views.xml",
+        "views/menus.xml",
+    ],
+    "installable": True,
+    "application": False,
+}

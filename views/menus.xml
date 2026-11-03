@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="quicklivraison_menu_root" name="Quick Livraison" parent="sale.sale_menu_root" sequence="80" groups="sales_team.group_sale_salesman"/>
+    <menuitem id="quicklivraison_menu_cities" name="Cities" parent="quicklivraison_menu_root" action="quicklivraison_city_action" sequence="10"/>
+</odoo>
